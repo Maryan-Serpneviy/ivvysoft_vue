@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { dataService } from '@/core/services/data.service'
+import { dataService } from '@/services/data.service'
 
 import TableHeading from '@/components/TableHeading.vue'
 import CharacteristicsRow from '@/components/CharacteristicsRow.vue'

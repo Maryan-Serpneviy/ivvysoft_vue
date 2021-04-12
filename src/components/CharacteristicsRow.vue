@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { dataService } from '@/core/services/data.service'
+import { dataService } from '@/services/data.service'
 
 import ProductCharacteristic from '@/components/ProductCharacteristic.vue'
 

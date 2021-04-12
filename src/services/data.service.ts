@@ -1,5 +1,5 @@
-import categoriesRawData from '../data/categories'
-import productsRawData from '../data/products'
+import categoriesRawData from '../core/data/categories'
+import productsRawData from '../core/data/products'
 
 class DataService {
   constructor() {
