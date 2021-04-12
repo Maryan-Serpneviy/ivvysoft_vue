@@ -31,12 +31,14 @@ class DataService {
           }
         }
         if (tableMap[category.id].values.length < this.products.length) {
-          const characteristic = product.characteristics_values_for_product[0].characteristics_default_values.find(item => {
-            return item.characteristics_property_id === category.id
+          product.characteristics_values_for_product.forEach(valuesArray => {
+            valuesArray.characteristics_default_values.forEach(defaultValue => {
+              if (defaultValue.characteristics_property_id === category.id) {
+                const characteristicValue = defaultValue?.value || defaultValue?.characteristics_default_values_i18_n?.name || '—'
+                tableMap[category.id].values.push(characteristicValue)
+              }
+            })
           })
-          const characteristicValue = characteristic?.value || characteristic?.characteristics_default_values_i18_n?.name || '—'
-          tableMap[category.id].values.push(characteristicValue)
-
           const allValuesEqual = tableMap[category.id]?.values.every(value => value === tableMap[category.id].values[0])
           tableMap[category.id].equality = allValuesEqual
         }
